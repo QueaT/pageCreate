@@ -1,0 +1,35 @@
+@import '../../../sass/variables.sass';
+
+.nav-desktop {
+  display: flex;
+  background-color: $menu-color;
+  position: absolute;
+  width: 100%;
+
+  &--wrapper {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    max-width: 800px;
+    justify-content: space-between;
+  }
+
+  &--element {
+    padding: 1rem;
+    cursor: pointer;
+
+    p {
+      margin: 0;
+
+      &:hover {
+        color: rgb(238, 75, 75);
+      }
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .nav-desktop {
+    display: none;
+  }
+}

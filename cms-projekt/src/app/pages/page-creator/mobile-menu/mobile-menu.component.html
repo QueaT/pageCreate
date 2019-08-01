@@ -1,0 +1,16 @@
+
+<nav [ngClass]="{ 'nav-active': toggleMenu }" class="nav">
+  <div class="nav--wrapper">
+    <div *ngFor="let item of menuItems" class="nav--element">
+      <app-mobile-menu-element [menuValues]="item"></app-mobile-menu-element>
+    </div>
+  </div>
+  <div class="checkbox-wrap">
+    <input
+      type="checkbox"
+      appCheckboxToggle
+      (click)="closeMenu()"
+      [checked]="true"
+    />
+  </div>
+</nav>

@@ -1,0 +1,18 @@
+<div class="tools-wrapper__box ">
+    <h2>Przeciągnij bloki w celu dodania ich do strony</h2>
+    <mat-form-field class="add-box">
+        <mat-label class="add-box__title">Dodaj kolumne</mat-label>
+        <mat-select>
+          <mat-option class="add-box__option" *ngFor="let column of columnsToChoose" (click)="addToColumnBox(column)" [value]="column">
+            {{column.col}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <div
+      cdkDropList
+      [cdkDropListData]="columns"
+      class="tools-wrapper__list"
+      cdkDropListOrientation='horizontal'
+      cdkDropListSortingDisabled>
+      <div class="tools-wrapper__columns" *ngFor="let item of columns" cdkDrag>{{item.col}}</div>
+  </div>

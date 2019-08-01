@@ -1,0 +1,19 @@
+@import '../../../../sass/variables.sass';
+
+.nav--link {
+  p {
+    margin: 0;
+    transition: color 0.3s linear;
+    text-align: center;
+
+    &:hover {
+      color: $menu-mobile__gray;
+    }
+  }
+
+  .child__container{
+    margin: 0;
+    padding: 0 8px;
+    font-size: 0.9rem;
+  }
+}

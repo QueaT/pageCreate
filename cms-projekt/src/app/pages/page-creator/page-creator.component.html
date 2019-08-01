@@ -1,0 +1,14 @@
+<section class="menu-section">
+      <header>
+          <app-mobile-menu> </app-mobile-menu>
+          <app-menu-desktop> </app-menu-desktop>
+          <img class="menu-section__mobile-icon" (click)="openMenu()" src="https://img.icons8.com/material-sharp/24/000000/menu.png" />
+          <app-session-time [mobileMode]="true"></app-session-time>
+        </header>
+</section>
+
+<section class="main-section">
+  <div class="container">
+    <app-page-structure></app-page-structure>
+  </div>
+</section>

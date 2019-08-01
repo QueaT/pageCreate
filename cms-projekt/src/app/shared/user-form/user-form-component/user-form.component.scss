@@ -1,0 +1,29 @@
+.form--block {
+  display: flex;
+  flex-direction: column;
+}
+
+.form--flex {
+  display: flex;
+  flex-direction: column;
+}
+
+
+::ng-deep .error-snackbar {
+  background: #f23c5d;
+  color: black
+}
+
+::ng-deep .succes-snackbar {
+  background: #00e676;
+  color: black;
+}
+
+::ng-deep .mat-simple-snackbar-action button {
+  color: black;
+
+  &:hover {
+    background: #00000046;
+    color: white;
+  }
+}

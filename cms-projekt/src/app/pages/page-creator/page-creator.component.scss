@@ -1,0 +1,11 @@
+@import '../../sass/variables';
+.menu-section{
+    overflow: hidden;
+
+    &__mobile-icon{
+        padding: 1rem;
+        @media(min-width:768px){
+            display: none
+        }
+    }
+}

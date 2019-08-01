@@ -1,0 +1,25 @@
+<div class="column-wrap">
+    <div
+      cdkDropList
+      [cdkDropListData]="dataClass"
+      class="tools-wrapper__list"
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="drop($event)">
+      <div
+      (click)="openColumnConfig(this.dataClass[i])"
+        [ngClass]="item.col"
+        class="tools-wrapper__columns"
+        *ngFor="let item of dataClass; let i = index"
+        cdkDrag>
+        {{ item.col }}
+      </div>
+    </div>
+    <mat-form-field *ngIf="dataClass.length" class="add-box">
+        <mat-label  class="add-box__title">Usuń kolumne</mat-label>
+        <mat-select>
+          <mat-option class="add-box__option" *ngFor="let column of dataClass; let i = index; trackBy:trackByFn" (click)="removeColumn(i)" [value]="column">
+            {{column.col}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>

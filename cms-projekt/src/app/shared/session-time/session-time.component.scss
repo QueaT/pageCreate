@@ -1,0 +1,16 @@
+.session-time{
+    margin: 0;
+    width: 165px;
+}
+.mobile-session{
+    display: none;
+}
+
+@media (max-width:768px){
+    .mobile-session{
+        display: inline-block;
+        text-align: right;
+        float: right;
+        padding: 1rem 0.5rem;
+    }
+}

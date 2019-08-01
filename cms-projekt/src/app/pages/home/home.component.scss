@@ -1,0 +1,103 @@
+.home-box {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  &__element {
+    width: 730px;
+    height: 730px;
+    perspective: 200;
+    border-radius: 50%;
+    background-color: #62809a33;
+    position: relative;
+    animation: pulse 2s linear infinite;
+    transition: transform 0.5s linear;
+  }
+  &__button{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      cursor: pointer;
+      width: 130px;
+      border:none;
+      height: 40px;
+      background-color: rgba(84, 226, 236, 0.541);
+      a{
+          color: rgba(15, 50, 78, 0.6);
+      }
+  }
+  &__button--log{
+    transform: translate(-50%,-60%);
+    animation: buttonMove1 1s both 1.1s;
+    opacity: 0;
+  }
+  &__button--reg{
+    transform: translate(-50%,-20%);
+    animation: buttonMove2 1s both 1.1s;
+    opacity: 0;
+  }
+}
+
+@keyframes buttonMove1{
+    0%{
+        transform: translate(-50%,-30%);
+
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        transform: translate(-50%,-65%);
+
+    }
+    90%{
+        transform: translate(-50%,-50%)
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-70%);
+
+    }
+
+}
+
+@keyframes buttonMove2{
+    0%{
+        transform: translate(-50%,30%);
+
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        transform: translate(-50%,65%);
+
+    }
+    90%{
+        transform: translate(-50%,50%)
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,70%);
+
+    }
+
+}
+
+@keyframes pulse {
+  0%{
+  box-shadow: 0 0 0 0 rgba(108, 166, 218,.7), 0 0 0 0 rgba(108, 166, 218,0.7)
+  }
+  40%{
+    box-shadow: 0 0 0 100px rgba(108, 166, 218,0), 0 0 0 0  0rgba(108, 166, 218,0.7)
+  }
+  80%{
+    box-shadow: 0 0 0 100px rgba(108, 166, 218,0),0 0 0 60px rgba(108, 166, 218,0)
+  }
+  100%{
+    box-shadow: 0 0 0 0 rgba(108, 166, 218,0), 0 0 0 60px rgba(108, 166, 218,0)
+  }
+}

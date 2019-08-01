@@ -1,0 +1,90 @@
+<div class="generator-wrapper generator">
+  <div class="generator__title">Konfiguracja bloku {{ colName }}</div>
+  <div class="generator__option-elements">
+    <mat-form-field class="generator__option--width">
+      <input
+        matInput
+        type="number"
+        placeholder="Szerokość"
+        [(ngModel)]="block[indexOfBlock].width"
+        (ngModelChange)="updateObject($event, 'width')"
+      />
+    </mat-form-field>
+    <mat-form-field class="generator__option--height">
+      <input
+        matInput
+        type="number"
+        placeholder="Wysokość"
+        [(ngModel)]="block[indexOfBlock].height"
+        (ngModelChange)="updateObject($event, 'height')"
+      />
+    </mat-form-field>
+    <mat-form-field class="generator__option--radius">
+      <input
+        matInput
+        type="number"
+        placeholder="Zaoglenia"
+        [(ngModel)]="block[indexOfBlock].borderRadius"
+        (ngModelChange)="updateObject($event, 'borderRadius')"
+      />
+    </mat-form-field>
+    <mat-form-field class="generator__option--color">
+      <input
+        matInput
+        type="color"
+        placeholder="Kolor"
+        [(ngModel)]="block[indexOfBlock].backgroundColor"
+        (ngModelChange)="updateObject($event, 'backgroundColor')"
+      />
+    </mat-form-field>
+    <mat-form-field class="generator__option--text">
+      <input
+        matInput
+        type="input"
+        placeholder="Tekst"
+        [(ngModel)]="block[indexOfBlock].text"
+        (ngModelChange)="updateObject($event, 'text')"
+      />
+    </mat-form-field>
+  </div>
+  <div class="generator__block-container">
+    <div class="generator__block-view">
+      <ng-container  *ngFor="let item of blockCopy; trackBy: trackByFn">
+          <div (click)="changeBlockIndex(item.index)" class="option-block" [ngStyle]="item">
+              <p *ngIf="item" class="option-block__text">{{item.text}}</p> 
+               </div>        
+      </ng-container>
+    </div>
+  </div>
+  <div class="generator__position-wrap">
+    <div class="generator__horizontal-wrap aligment-box">
+      <div class="generator__title">
+        Konfiguracja horyzontalna elementu
+      </div>
+      <app-block-aligment
+        [block]="block[indexOfBlock]"
+        [alignType]="'justifyContent'"
+        (emitBlockValue)="updateObject($event.event, $event.key)"
+      >
+    <p class="first">Do lewej</p>
+    <p class="second">Wycentruj</p>
+    <p class="third">Do prawej</p>
+    </app-block-aligment>
+    </div>
+    <div class="generator__vertical-wrap aligment-box">
+      <div class="generator__title">
+        Konfiguracja wertykalna elementu
+      </div>
+      <app-block-aligment
+        [block]="block"
+        [alignType]="'alignItems'"
+        (emitBlockValue)="updateObject($event.event, $event.key)"
+      >
+    <p class="first">Góra</p>
+    <p class="second">Środek</p>
+    <p class="third">Dół</p>
+    </app-block-aligment>
+    </div>
+  </div>
+  <button mat-raised-button (click)="test()">dodaj</button>
+</div>

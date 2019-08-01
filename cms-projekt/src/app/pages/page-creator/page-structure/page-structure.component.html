@@ -1,0 +1,11 @@
+    <div class="tools-wrapper" cdkDropListGroup>
+       <app-block-structure [columns]="columns" [columnsToChoose]="columnsToChoose"></app-block-structure>
+        <div class="tools-wrapper__box">
+           <h2>Schemat rozmieszczenia elementów</h2>
+           <button (click)="addRow()" class="tools-wrapper__button" mat-raised-button color="primary">Dodaj wiersz</button>
+           <button  (click)="removeRow()" class="tools-wrapper__button" mat-raised-button color="warn">Usun wiersz</button>
+            <div *ngFor="let dataStructure of dataStructureOfColumns;let i = index">
+              <app-columns-structure (dropEmitter)="drop($event)" [dataClass]="dataStructure"></app-columns-structure>
+            </div>
+        </div>
+      </div>

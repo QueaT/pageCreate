@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginForm.valid ? checkIfUserExist() : null" class="form--block">
+  <mat-form-field class="form-group">
+    <input formControlName="nick" matInput placeholder="Name">
+    <mat-error *ngIf="name.invalid && name.touched">
+      Twój nick nie spełnia kryteriów
+    </mat-error>
+  </mat-form-field>
+    <mat-form-field class="form-group">
+      <input type="password" formControlName="password" matInput placeholder="Password">
+      <mat-hint *ngIf="registerMode">haslo min 5 znakow</mat-hint>
+      <mat-error *ngIf="password.invalid && password.touched">
+        Uzupełnij hasło
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field *ngIf="registerMode" class="form-group">
+     <input matInput type="password" formControlName="confirm_password"  placeholder="Confirm password">
+     <mat-error *ngIf="passwordChecker.invalid && passwordChecker.touched">
+     Hasla sie nie zgadzają
+    </mat-error>
+   </mat-form-field>
+  <mat-form-field class="form-group">
+    <input matInput formControlName="email" placeholder="Email">
+    <mat-error *ngIf="email.invalid && email.touched">
+      Błedny email
+    </mat-error>
+  </mat-form-field>
+  <button [disabled]="loginForm.invalid" type="submit" mat-raised-button color="accent">{{ registerMode ? "Zarejestruj sie" : "Zaloguj sie"}}</button>
+  </form>

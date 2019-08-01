@@ -1,0 +1,44 @@
+@import './sass/variables';
+
+.background{
+    width: 100vw;
+    min-height: 100vh;
+    background:#e6ffff;
+    .main--container{
+    //     width: 100vw;
+    //     min-height: 100vh;
+    //     position: absolute;
+    //    background-color:#b3e5fc ;
+        // clip-path: polygon(100% 0, 0 100%, 17% 16%);
+        // animation: polygonMove 1s 0.5s ease-in both;
+    }
+}
+
+@keyframes polygonMove {
+    from{
+        clip-path: polygon(100% 0, 0 100%, 44% 54%);
+    }
+    to{
+        clip-path: polygon(100% 0, 0 100%, 17% 16%);
+    }
+}
+
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar{
+    background-color: #65aaaa;
+  }
+  
+  ::ng-deep .mat-slide-toggle-bar{
+      background-color: $menu-color;
+    }
+    
+  
+  ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+      background-color: white;
+  }
+
+  ::ng-deep .mat-slide-toggle {
+   float: right;
+   margin-right: 1rem;
+   margin-top: 0.5rem;
+}

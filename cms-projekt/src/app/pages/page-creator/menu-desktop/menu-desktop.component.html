@@ -1,0 +1,13 @@
+<nav class="nav-desktop">
+    <div class="nav-desktop--element">
+  <app-session-time></app-session-time>
+</div>
+  <div class="nav-desktop--wrapper">
+    <div *ngFor="let item of menuItems" class="nav-desktop--element">
+      <app-menu-desktop-element [menuValues]="item"></app-menu-desktop-element>
+    </div>
+  </div>
+  <div (click)="logOut()" class="nav-desktop--element">
+      <p>Wyloguj</p>
+    </div>
+</nav>

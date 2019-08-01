@@ -1,0 +1,15 @@
+<mat-radio-group
+  [(ngModel)]="block[alignType]"
+  (ngModelChange)="updateObject($event, alignType)"
+  class="checkbox-label"
+>
+  <mat-radio-button class="checkbox-label__element" value="flex-start"
+    ><ng-content select=".first"></ng-content>
+  </mat-radio-button>
+  <mat-radio-button class="checkbox-label__element" value="center"
+    ><ng-content select=".second"></ng-content
+  ></mat-radio-button>
+  <mat-radio-button class="checkbox-label__element" value="flex-end"
+    ><ng-content select=".third"></ng-content
+  ></mat-radio-button>
+</mat-radio-group>

@@ -1,0 +1,9 @@
+@import 'src/app/sass/variables.sass';
+
+::ng-deep .cdk-overlay-pane{
+  //  min-height: 320px;
+}
+
+::ng-deep .mat-dialog-container{
+    background: $matt-black;
+}

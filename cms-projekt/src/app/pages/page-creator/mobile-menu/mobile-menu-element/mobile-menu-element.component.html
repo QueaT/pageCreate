@@ -1,0 +1,5 @@
+<a class="nav--link">
+ <p (click)="displayChildren(menuValues)" [ngClass]="{'child': menuValues.className}"> {{ menuValues.parent }}</p>
+      <app-mobile-menu-element *ngIf="openChild" [menuValues]="menuValues.children"></app-mobile-menu-element>
+</a>
+

@@ -1,0 +1,55 @@
+p{
+    margin: 0;
+    color: white;
+}
+.generator{
+    &__title{
+        color:white;
+        padding-bottom: 1rem;
+    }
+    &__block-container{
+        width: 100%;
+        box-sizing: border-box;
+        height: 70px;
+        padding: 0.3rem;
+        overflow: hidden;
+        border: 1px solid gainsboro;
+        margin-bottom: 1.5rem;
+    }
+    &__position-wrap{
+        display: flex;
+
+    }
+    &__block-view{
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    &__option-elements{
+            display: flex;
+            justify-content: space-around;
+    }
+    &__option{
+        &--color{
+            width:5%;
+        }
+    }
+    ::ng-deep .mat-form-field-label-wrapper{
+        .mat-form-field-label{
+            color: white;
+        }
+    }
+    ::ng-deep .mat-form-field-infix{
+        color: white;
+    }
+}
+.aligment-box{
+    margin-right: 1rem;
+}
+.option-block{
+    display: flex;
+    p{
+        color: black;
+    }
+}
