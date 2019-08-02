@@ -1,6 +1,12 @@
 @import '../../../../sass/variables.sass';
 
 .nav--link {
+  .child{
+    animation: slideIn 0.6s  0.3s both;
+    padding: 0.5rem;
+    margin-top: 11px;
+    border-top: 1px solid;
+  }
   p {
     margin: 0;
     transition: color 0.3s linear;
@@ -17,3 +23,18 @@
     font-size: 0.9rem;
   }
 }
+
+@keyframes slideIn{
+  0%{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  // 50%{
+  //   opacity: 0.5;
+  //   transform: translateX(-25%);
+  // }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 
